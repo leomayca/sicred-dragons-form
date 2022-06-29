@@ -45,6 +45,7 @@ export const FormContainer = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 50px;
+    border-right: solid 2px #3c1d20;
 
     @media (max-width: 800px) {
         width: 270px;
