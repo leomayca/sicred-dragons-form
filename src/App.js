@@ -3,6 +3,8 @@ import { Router } from 'react-router-dom'
 
 import { AuthProvider } from './contexts/auth.context'
 
+import './styles.css'
+
 import Routes from './routes/routes'
 import History from './routes/history'
 
