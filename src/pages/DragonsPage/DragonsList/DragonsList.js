@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { AuthContext } from '../../../contexts/auth.context'
+import { Container } from './styles'
+import { Header } from '../../../components/Header'
 
 const DragonsList = () => {
-    const { handleLogout } = useContext(AuthContext)
-
     return (
-        <button type="button" onClick={handleLogout}>
-            Sair
-        </button>
+        <React.Fragment>
+            <Header />
+            <Container>testando</Container>
+        </React.Fragment>
     )
 }
 

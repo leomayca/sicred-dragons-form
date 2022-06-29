@@ -4,14 +4,14 @@ import { backgroundDragon } from '../../../common/images'
 
 export const Container = styled.div`
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 300px 1fr;
     background-color: #121118;
     width: 100vw;
     height: 100vh;
     grid-template-areas: 'form image';
     overflow: hidden;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 800px) {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +27,7 @@ export const ImageContainer = styled.div`
     grid-area: image;
     overflow: hidden;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 800px) {
         display: flex;
         height: 100%;
     }
@@ -46,9 +46,9 @@ export const FormContainer = styled.div`
     flex-direction: column;
     padding: 50px;
 
-    @media (max-width: 1024px) {
-        width: 370px;
-        height: 370px;
+    @media (max-width: 800px) {
+        width: 270px;
+        height: 270px;
         position: absolute;
         border-radius: 20px;
         background-color: rgba(17, 17, 17, 0.85);
@@ -56,9 +56,10 @@ export const FormContainer = styled.div`
 
     h1 {
         color: white;
+        font-size: 1.5em;
 
-        @media (max-width: 1024px) {
-            font-size: 1.9em;
+        @media (max-width: 800px) {
+            font-size: 1.3em;
         }
     }
 `

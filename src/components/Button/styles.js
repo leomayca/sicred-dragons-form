@@ -15,6 +15,6 @@ export const ButtonDefault = styled.button`
     letter-spacing: 1px;
     outline: none;
     user-select: none;
-    padding: 5px 12px;
-    font-size: 17px;
+    padding: ${({ small }) => (small ? '0' : '5px 12px')};
+    font-size: ${({ small }) => (small ? '12px' : '17px')};
 `
