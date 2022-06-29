@@ -11,10 +11,12 @@ const AuthProvider = ({ children }) => {
     const [authenticated, setAuthenticated] = useState(false)
     const [loading, setLoading] = useState(true)
 
-    const handleLogin = async () => {
-        localStorage.setItem('auth', JSON.stringify(mockToken))
-        setAuthenticated(true)
-        history.push(routeType.DRAGONS_LIST)
+    const handleLogin = async (login) => {
+        if (login?.user === 'dino' && login.password === 'abacate') {
+            localStorage.setItem('auth', JSON.stringify(mockToken))
+            setAuthenticated(true)
+            history.push(routeType.DRAGONS_LIST)
+        }
     }
 
     const handleLogout = async () => {
