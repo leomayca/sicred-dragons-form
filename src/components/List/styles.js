@@ -16,6 +16,7 @@ export const Card = styled.div`
     margin-top: 30px;
     color: white;
     border-radius: 10px;
+    border: solid 2px #111;
 `
 
 export const StartDiv = styled.div`

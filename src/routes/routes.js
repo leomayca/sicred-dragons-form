@@ -6,6 +6,7 @@ import { routeType } from '../resources/routeTypes'
 
 import Login from '../pages/AuthPage/Login'
 import DragonsList from '../pages/DragonsPage/DragonsList'
+import DragonForm from '../pages/DragonsPage/DragonForm'
 
 const CustomRoute = ({ isPrivate, ...rest }) => {
     const { authenticated } = useContext(AuthContext)
@@ -26,6 +27,18 @@ const Routes = () => {
                 exact
                 isPrivate
                 component={DragonsList}
+            />
+            <CustomRoute
+                path={routeType.DRAGONS_CREATE}
+                exact
+                isPrivate
+                component={DragonForm}
+            />
+            <CustomRoute
+                path={routeType.DRAGONS_EDIT}
+                exact
+                isPrivate
+                component={DragonForm}
             />
             <Redirect
                 from=""
