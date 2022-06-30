@@ -10,14 +10,14 @@ import {
 import history from '../../../routes/history'
 import { routeType } from '../../../resources/routeTypes'
 
-import { Title, GridTemplate, GridContent, Image } from './styles'
 import { Container, Content, ImageContainer } from '../DefaultStyles/styles'
 import { Header } from '../../../components/Header'
-import { Button } from '../../../components/Button'
-import { Input } from '../../../components/Input'
+import { Form } from './Form'
+import { Details } from './Details'
 
-const DragonForm = () => {
+const DragonForm = ({ edit }) => {
     const { id } = useParams()
+
     const [dragon, setDragon] = useState({
         name: '',
         type: '',
@@ -48,7 +48,9 @@ const DragonForm = () => {
     }
 
     useEffect(() => {
-        getDragonById({}, { id }).then(({ data }) => setDragon(data))
+        if (id) {
+            getDragonById({}, { id }).then(({ data }) => setDragon(data))
+        }
     }, [])
 
     return (
@@ -57,58 +59,16 @@ const DragonForm = () => {
             <ImageContainer />
             <Container>
                 <Content>
-                    <Title>{id ? 'Editar' : 'Criar'} Dragão</Title>
-                    <GridTemplate>
-                        <GridContent>
-                            <Image />
-                        </GridContent>
-                        <GridContent>
-                            <Input
-                                label="Nome"
-                                handleChange={(e) => handleChange(e)}
-                                onKeyPress={(e) => {
-                                    if (e.key === 'Enter') {
-                                        handleClick()
-                                    }
-                                }}
-                                value={dragon?.name}
-                            />
-                            <Input
-                                label="Tipo"
-                                handleChange={(e) => handleChange(e, true)}
-                                onKeyPress={(e) => {
-                                    if (e.key === 'Enter') {
-                                        handleClick()
-                                    }
-                                }}
-                                value={dragon?.type}
-                            />
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    width: '100%',
-                                    marginTop: '5px',
-                                }}
-                            >
-                                <Button
-                                    style={{ width: '47%' }}
-                                    color="2"
-                                    onClick={() =>
-                                        history.push(routeType.DRAGONS_LIST)
-                                    }
-                                >
-                                    Cancelar
-                                </Button>
-                                <Button
-                                    style={{ width: '47%' }}
-                                    onClick={() => handleClick()}
-                                >
-                                    {id ? 'Editar' : 'Criar'}
-                                </Button>
-                            </div>
-                        </GridContent>
-                    </GridTemplate>
+                    {edit || !id ? (
+                        <Form
+                            id={id}
+                            handleChange={handleChange}
+                            handleClick={handleClick}
+                            dragon={dragon}
+                        />
+                    ) : (
+                        <Details dragon={dragon} />
+                    )}
                 </Content>
             </Container>
         </React.Fragment>

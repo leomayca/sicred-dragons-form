@@ -15,7 +15,15 @@ const Card = ({ item, ...props }) => {
     return (
         <React.Fragment>
             <CardDefault {...props}>
-                <StartDiv>{item?.name}</StartDiv>
+                <StartDiv
+                    onClick={() =>
+                        history.push(
+                            routeType.DRAGONS_DETAILS_ROOT + `/${item?.id}`
+                        )
+                    }
+                >
+                    {item?.name}
+                </StartDiv>
                 <EndDiv>
                     <div
                         style={{ marginRight: '15px', cursor: 'pointer' }}

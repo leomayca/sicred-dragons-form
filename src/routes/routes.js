@@ -38,7 +38,13 @@ const Routes = () => {
                 path={routeType.DRAGONS_EDIT}
                 exact
                 isPrivate
-                component={DragonForm}
+                component={() => <DragonForm edit />}
+            />
+            <CustomRoute
+                path={routeType.DRAGONS_DETAILS}
+                exact
+                isPrivate
+                component={() => <DragonForm />}
             />
             <Redirect
                 from=""

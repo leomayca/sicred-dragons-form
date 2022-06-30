@@ -7,7 +7,7 @@ import { Card } from './Card'
 
 const List = ({ list, ...props }) => {
     const handleList = () => {
-        const sortedDragons = sortBy(list, ['name'])
+        const sortedDragons = sortBy(list, [(o) => o.name.toLowerCase()])
 
         const dragonsCard = map(sortedDragons, (item, index) => {
             return (

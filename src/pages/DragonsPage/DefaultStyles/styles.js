@@ -33,4 +33,8 @@ export const Content = styled.div`
     color: white;
     border: solid 2px #111;
     flex-direction: column;
+
+    @media (max-width: 800px) {
+        font-size: 12px;
+    }
 `
