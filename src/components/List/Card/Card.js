@@ -9,7 +9,10 @@ import { Card as CardDefault, StartDiv, EndDiv } from '../styles'
 
 const Card = ({ item, ...props }) => {
     const handleDelete = () => {
-        deleteDragon({}, item).then((res) => alert(res))
+        deleteDragon({}, item).then((res) => {
+            alert(`Dragão chamado ${res?.data?.name} deletado com sucesso!`)
+            history.push(routeType.DRAGONS_ROOT)
+        })
     }
 
     return (
