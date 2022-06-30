@@ -6,7 +6,7 @@ import { routeType } from '../../../resources/routeTypes'
 import { getDragons } from '../../../services/api/resources/dragons'
 
 import { ImageContainer, Content, Container } from '../DefaultStyles/styles'
-import { ButtonContainer } from './styles'
+import { ButtonContainer, Text } from './styles'
 import { Header } from '../../../components/Header'
 import { Button } from '../../../components/Button'
 import { List } from '../../../components/List'
@@ -27,9 +27,7 @@ const DragonsList = () => {
             <Container>
                 <Content>
                     <ButtonContainer>
-                        <div style={{ fontWeight: 'bold', fontSize: '25px' }}>
-                            Nome do Dragão
-                        </div>
+                        <Text>Nome do Dragão</Text>
                         <Button
                             style={{ width: '160px' }}
                             onClick={() =>

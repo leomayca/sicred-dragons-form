@@ -50,5 +50,11 @@ export const Image = styled.div`
     @media (max-width: 600px) {
         height: 110px;
         width: 140px;
+        margin-right: 0;
+    }
+
+    @media (max-width: 480px) {
+        height: 80px;
+        width: 110px;
     }
 `
