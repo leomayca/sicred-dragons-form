@@ -9,12 +9,7 @@ export const Container = styled.div`
     width: 100%;
 `
 
-export const Label = styled.label`
-    ::after {
-        content: ${({ required }) => (required ? '"*"' : null)};
-        color: red;
-    }
-`
+export const Label = styled.label``
 
 export const InputDefault = styled.input`
     background: #222;
@@ -41,9 +36,5 @@ export const InputDefault = styled.input`
         ::placeholder {
             color: rgba(150, 150, 150, 0.3);
         }
-    }
-
-    :disabled {
-        background: #eeeeee;
     }
 `
